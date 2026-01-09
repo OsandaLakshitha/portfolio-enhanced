@@ -1,0 +1,380 @@
+/* ================================
+   FONT IMPORTS - MUST BE FIRST!
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* ================================
+   TAILWIND CSS IMPORT
+   ================================ */
+@import "tailwindcss";
+
+/* ================================
+   TAILWIND V4 THEME CONFIGURATION
+   ================================ */
+@theme {
+  /* === COLOR PALETTE === */
+  --color-cyber-black: #020617;
+  --color-cyber-dark: #0a0f1a;
+  --color-cyber-gray: #1e293b;
+  --color-cyber-slate: #334155;
+  
+  --color-neon-green: #00ff88;
+  --color-neon-green-dim: #00cc6a;
+  --color-neon-blue: #00d4ff;
+  --color-neon-blue-dim: #00a8cc;
+  --color-neon-purple: #a855f7;
+  --color-neon-purple-dim: #7c3aed;
+  --color-neon-pink: #f472b6;
+  --color-neon-orange: #fb923c;
+  
+  /* === TYPOGRAPHY === */
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace;
+  --font-sans: "Inter", "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --font-display: "Orbitron", "Rajdhani", sans-serif;
+  
+  /* === SPACING & SIZING === */
+  --spacing-section: 6rem;
+  
+  /* === BORDER RADIUS === */
+  --radius-cyber: 0.5rem;
+  
+  /* === SHADOWS === */
+  --shadow-neon-green: 0 0 20px rgba(0, 255, 136, 0.5), 0 0 40px rgba(0, 255, 136, 0.2);
+  --shadow-neon-blue: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.2);
+  --shadow-neon-purple: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.2);
+  
+  /* === ANIMATIONS === */
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-pulse-neon: pulse-neon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glitch: glitch 0.3s ease-in-out;
+  --animate-scan-line: scan-line 8s linear infinite;
+  --animate-flicker: flicker 0.15s infinite;
+  
+  /* === TRANSITIONS === */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================================
+   KEYFRAME ANIMATIONS
+   ================================ */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+  to {
+    text-shadow: 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor;
+  }
+}
+
+@keyframes pulse-neon {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes border-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-neon-green);
+  }
+}
+
+/* ================================
+   BASE STYLES
+   ================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cyber-black);
+  color: #e2e8f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================
+   CUSTOM SCROLLBAR
+   ================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cyber-dark);
+  border-left: 1px solid var(--color-cyber-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--color-neon-green) 0%,
+    var(--color-neon-blue) 50%,
+    var(--color-neon-purple) 100%
+  );
+  border-radius: 4px;
+  border: 1px solid var(--color-cyber-gray);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-neon-green) 0%,
+    var(--color-neon-purple) 100%
+  );
+  box-shadow: 0 0 10px var(--color-neon-green);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neon-green) var(--color-cyber-dark);
+}
+
+/* ================================
+   SELECTION STYLES
+   ================================ */
+::selection {
+  background-color: var(--color-neon-purple);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--color-neon-purple);
+  color: white;
+}
+
+/* ================================
+   UTILITY CLASSES
+   ================================ */
+.font-display {
+  font-family: 'Orbitron', 'Rajdhani', system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 30px var(--color-neon-green);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px var(--color-neon-blue), 0 0 20px var(--color-neon-blue), 0 0 30px var(--color-neon-blue);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px var(--color-neon-purple), 0 0 20px var(--color-neon-purple), 0 0 30px var(--color-neon-purple);
+}
+
+.box-glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3), 0 0 40px rgba(0, 255, 136, 0.1), inset 0 0 20px rgba(0, 255, 136, 0.05);
+}
+
+.box-glow-blue {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1), inset 0 0 20px rgba(0, 212, 255, 0.05);
+}
+
+.box-glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(168, 85, 247, 0.1), inset 0 0 20px rgba(168, 85, 247, 0.05);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-light {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Cyber border effect */
+.cyber-border {
+  position: relative;
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--color-neon-green),
+    var(--color-neon-blue),
+    var(--color-neon-purple),
+    var(--color-neon-green)
+  );
+  background-size: 300% 300%;
+  animation: border-flow 4s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Scan line overlay effect */
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+}
+
+/* Grid pattern background */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-neon-green) 0%,
+    var(--color-neon-blue) 50%,
+    var(--color-neon-purple) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Alternative if gradient doesn't work */
+@supports not (background-clip: text) {
+  .gradient-text {
+    color: #00ff88;
+  }
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-neon-green);
+  outline-offset: 2px;
+}
+
+/* Code blocks */
+code {
+  font-family: var(--font-mono);
+  background-color: var(--color-cyber-gray);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* ================================
+   SCROLL FIX
+   ================================ */
+
+/* Ensure body starts at top */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Loading state - prevent scroll */
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
