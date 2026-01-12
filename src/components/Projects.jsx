@@ -50,7 +50,7 @@ const projects = [
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
     technologies: ['React.js', 'Gemini API', 'JavaScript', 'CSS'],
     category: 'ai',
-    github: 'https://github.com/osandalakshitha/kanthi-ai',
+    github: 'https://github.com/OsandaLakshitha/Kanthi-ChatBot',
     live: null,
     featured: true,
     year: '2023',

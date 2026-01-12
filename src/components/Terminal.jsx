@@ -31,7 +31,7 @@ Available commands:
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  👨‍💻 Full-Stack Developer & QA Engineer                      │
-│  📍 Based in Nawalapitiya, Sri Lanka                        │
+│  📍 Based in Colombo, Sri Lanka                              │
 │  🎓 BSc (Hons) IT Undergraduate at SLIIT                    │
 │                                                             │
 │  Full-stack software engineering undergraduate with         │
@@ -163,16 +163,16 @@ Available commands:
 │     Sri Lanka Institute of Information Technology (SLIIT)   │
 │     2022 - Expected 2026                                    │
 │                                                             │
-│  📜 Engineering Technology                                   │
+│  📜 Engineering Technology                                  │
 │     Anuruddha Kumara National College, Nawalapitiya         │
 │     2020 | Results: 2C 1S                                   │
 │                                                             │
-│  💻 Diploma in PC Hardware Engineering                       │
+│  💻 Diploma in PC Hardware Engineering                      │
 │     and Network Administration                              │
 │     ESOFT Metro Campus                                      │
 │     2017                                                    │
 │                                                             │
-│  📚 Current Focus:                                           │
+│  📚 Current Focus:                                          │
 │     • Full-Stack Web Development                            │
 │     • Quality Assurance & Testing                           │
 │     • Mobile App Development                                │
@@ -188,11 +188,11 @@ Available commands:
 │                                                             │
 │  📧 Email:    osandalakshitha01@gmail.com                   │
 │  📱 Phone:    +94 75 4 927 750                              │
-│  📍 Location: No 77 UC Rd, Nawalapitiya, Sri Lanka          │
+│  📍 Location: Colombo, Sri Lanka                             │
 │                                                             │
 │  ─────────────────────────────────────────────────────────  │
 │                                                             │
-│  💬 Open for:                                                │
+│  💬 Open for:                                               │
 │     • Internship positions                                  │
 │     • Full-time opportunities                               │
 │     • Freelance projects                                    │
@@ -248,7 +248,7 @@ Available commands:
     response: `
   ╔═══════════════════════════════════════════════════════════╗
   ║                                                           ║
-  ║   🎉 CONGRATULATIONS! 🎉                                  ║
+  ║   🎉 CONGRATULATIONS! 🎉                                 ║
   ║                                                           ║
   ║   You've unlocked the secret command!                     ║
   ║                                                           ║
